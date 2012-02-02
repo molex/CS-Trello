@@ -1,0 +1,11 @@
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\TrelloWrapper.dll
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\TrelloWrapper.pdb
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\DotNetOpenAuth.dll
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\DotNetOpenAuth.xml
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\obj\Debug\TrelloWrapper.dll
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\obj\Debug\TrelloWrapper.pdb
+C:\Users\mike\Trello-C--API-Wrapper\TrelloWrapper\bin\Debug\RestSharp.dll

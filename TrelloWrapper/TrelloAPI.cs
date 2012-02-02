@@ -2,44 +2,43 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml;
-using Newtonsoft.Json;
-using DotNetOpenAuth;
+using RestSharp;
 
 namespace TrelloWrapper
 {
     public class TrelloAPI
     {
-        /*
-         * Here is the list of classes that need to exist based on the types of API calls that can be made:
-         * Board
-         * A board is the most basic object. It contains lists
-         * 
-         * List 
-         * A list is a container that holds cards
-         * 
-         * Card
-         * a card can contain any number of members, actions, or checklists
-         * 
-         * action
-         * can be added to a list or card
-         * 
-         * checklist
-         * just an object that can be added to a card
-         * 
-         * member
-         * list of users on a board or in an organization
-         * 
-         * notification
-         * returns a list of notifications based on memmber, board, list, notifcaton id, or card
-         * 
-         * organization
-         * Group of members 
-         * 
-         * token         
-         * returns specific information about a member and thier permissions
-         * 
+        
+        public T GetRequest<T>(string path, params string[] args) where T: new()
+        {
+            if (string.IsNullOrEmpty(Config.AuthKey))
+                throw new InvalidOperationException("WAT...there's no key???- Well go get one @" +  "https://trello.com/1/appKey/generate");
+                                                   
+            RestClient  client  = new RestClient (Config.ApiBaseUrl);
+            RestRequest request = new RestRequest(BuildUrl(path, args));
+
+            return client.Execute<T>(request).Data;
+        }
+
+        public string GetRequest(string path, params string[] args)
+        {
+            if (string.IsNullOrEmpty(Config.AuthKey))
+                    throw new InvalidOperationException("WAT...there's no key???- Well go get one @" +  "https://trello.com/1/appKey/generate");
+
+            RestClient  client  = new RestClient (Config.ApiBaseUrl);
+            RestRequest request = new RestRequest(BuildUrl(path, args));
+
+            return client.Execute(request).Content;
+        }
+
+        public string BuildUrl(string path, params string[] args)
+        {
+            path = string.Format(path, args);
+            return string.Format("{0}?key={1}", path, Config.AuthKey);
+        }
+    }
+         /*
          * Need to create variables to contain API key and the secret so that the user can be authenticated
          */
-    }
+    
 }
